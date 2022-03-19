@@ -1,0 +1,15 @@
+package rules;
+dialect  "mvel"
+
+import demo.model.PaymentMethodCriterial;
+import demo.model.PaymentMethod;
+
+rule "payment_methods_filter"
+    salience 10          // set priority
+    no-loop true         // avoid infinite loop
+    when
+      $criteria: PaymentMethodCriterial($country: country == "cn", $allowedAsserts: allowedAsserts contains "id-1", $currency: currency == "USD", $name: name == "PAYPAL", $exp: exp == true)
+      $method: PaymentMethod()
+    then
+      $method.setDisabled(false);
+end
