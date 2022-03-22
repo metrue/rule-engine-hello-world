@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <drools.version>6.5.0.Final</drools.version>
+        <drools.version>7.14.0.Final</drools.version>
         <jbpm.version>6.5.0.Final</jbpm.version>
         <lombok.version>1.18.2</lombok.version>
         <maven.compiler.source>1.8</maven.compiler.source>

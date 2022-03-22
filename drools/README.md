@@ -1,16 +1,14 @@
 ### Drools Hello World
 
 ```
-mvn compile exec:java -Dexec.mainClass=demo.App
+$ mvn compile exec:java -Dexec.mainClass=demo.App -Dexec.cleanupDaemonThreads=false
+
+time usage: 1743.0 ms
 ```
 
+with Session Pool
 ```
-************* Before Filter **************
-PaymentMethod(name=ApplePay, disabled=false)
-PaymentMethod(name=PayPal, disabled=true)
-************* After Filter **************
-time usage: 33.0 ms
-PaymentMethod(name=ApplePay, disabled=false)
-PaymentMethod(name=PayPal, disabled=false)
-************************************
+$ mvn compile exec:java -Dexec.mainClass=demo.AppSessionPool -Dexec.cleanupDaemonThreads=false
+
+time usage: 796.0 ms
 ```
